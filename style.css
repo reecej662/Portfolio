@@ -1,0 +1,287 @@
+html, body{
+	height:100%;
+}
+
+@media (max-width: 990px) {
+	img {
+		width: 100%;
+		-webkit-touch-callout: none; /* iOS Safari */
+		-webkit-user-select: none; /* Chrome/Safari/Opera */
+		-khtml-user-select: none; /* Konqueror */
+		-moz-user-select: none; /* Firefox */
+		-ms-user-select: none; /* Internet Explorer/Edge */
+		user-select: none; /* Non-prefixed version, currently
+		                      not supported by any browser */
+	}
+
+	/* CSS for main cols */
+	.main-col {
+		height: 100%;
+		padding: 0;
+		padding-top: 4em;
+	}
+
+	#left-main {
+		height:auto;
+	}
+
+	/* CSS for items on the right */
+
+	/* CSS for footer with screenshots */
+
+	/* CSS for tagline */
+	.tagline {
+		height:auto;
+		margin-top: 1em;
+		/*margin-bottom:1em;*/
+	}
+
+	.footer {
+		/*background-color: #0000ff;*/
+		width: 100%;
+		position: relative;
+		/*height: 65%;*/
+	}
+
+	/* CSS for items on left */
+	
+	.left {
+		height: auto;
+		/*background-color: #ff0000;*/
+	}
+
+	.title {
+		margin-top: 5%
+	}
+
+	.logo {
+		margin-top: 5%;
+	}
+
+	.instruction {
+		visibility: hidden;
+		position: relative;
+		bottom: -10em;
+		width: 100%;
+		padding-left: 2em;
+		padding-right: 2em;
+	}
+
+	.instruction img {
+		padding-left: 4em;
+		padding-right: 4em;
+	}
+
+	/* CSS for the phones */
+	.phone {
+		z-index: 100;
+		padding: 0;
+	}
+
+	.overlap {
+		margin-left: 0;
+	}
+
+	.person {
+		width: 450px;
+	}
+
+	.right-landing {
+		width: 450px;
+	}
+}
+
+/* Large Desktops */
+
+@media (min-width: 990px) {
+
+	img {
+		width: 100%;
+	}
+
+	/* CSS for main cols */
+	.main-col {
+		height: 100%;
+		padding: 0;
+		padding-top: 4em;
+	}
+
+	/* CSS for items on the right */
+
+	/* CSS for footer with screenshots */
+
+	/* CSS for tagline */
+	.tagline {
+		height:auto;
+		margin-top: 4em;
+	}
+
+	/* CSS for items on left */
+	
+	.left {
+		height: auto;
+		/*background-color: #ff0000;*/
+	}
+
+	.title {
+		margin-top: 5%;
+		margin-bottom: 2%;
+	}
+
+	.logo {
+		margin-top: 5%;
+	}
+
+	.instruction {
+		position: absolute;
+		bottom: 10%;
+		width: 80%;
+		left:4%;		
+	}
+
+	.col-md-offset-2-other {
+		margin-left: 6.944444446%;
+	}
+
+	/* CSS for the phones */
+	.phone {
+		z-index: 100;
+		padding: 0;
+		;
+	}
+
+	.overlap {
+		margin-left: -22.5%;
+	}
+
+	.phone2 {
+		z-index: 90;
+	}
+
+	.phone3 {
+		z-index: 80;
+	}
+
+	.phone4 {
+		z-index: 70;
+	}
+
+	.person {
+		width: 725px;
+	}
+
+	.right-landing {
+		width: 725px;
+	}
+
+}
+
+.half {
+	position: fixed;
+	top: 0;
+}
+
+#left {
+	left: 0;
+	top: 100%;
+	width: 50%;
+	height: 100%;
+}
+
+#right {
+	right: 0;
+	top: 100%;
+	width: 50%;
+	height: 100%;
+}
+
+.left-landing {
+	left: 0;
+	padding-left: 1em;
+	width: 50%;
+	height: 100%;
+}
+
+.right-landing {
+	right: 0;
+	height: 100%;
+}
+
+.flipbook-viewport {
+	position: absolute;
+	top: 225%;
+}
+
+.landing-viewport {
+	background-color: #48CCFB;
+	height: 100%;
+}
+
+.content-viewport {
+	position: absolute;
+	top: 100%;
+	height: 100%;
+	width: 100%;
+}
+
+.button {
+	color: orange;
+}
+
+.button img {
+	display: block;
+	width: auto;
+	height: 30px;
+	margin-top: 1.5em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.name {
+	position: absolute;
+	top:45%;
+}
+
+.instruction {
+	position: absolute;
+	bottom: 1em;
+	z-index: 300;
+}
+
+.instruction img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.page {
+	width: 100%;
+	height: 100%;
+	/*overflow: hidden;*/
+	background-color: rgba(255, 255, 255, 0);
+	background-image: url("../v2/pagebg.png");
+	background-image: "";
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+#test {
+	width: 100%;
+	height: 100%;
+	background-color: #5555ff
+}
+
+.flipbook {
+	height: 100%;
+	width: 85em;
+	padding-left: -5em;
+}
+
+.bottom {
+	position: absolute;
+	bottom: 0;
+	width:100%;
+	height: auto;
+	left: initial;
+	right: 0;
+}

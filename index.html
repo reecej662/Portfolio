@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<HTML lang="en">
+<head>
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css"/>
+	<link rel="icon" href="../v2/rj.png"/>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<script src="lib/turn.js" type="text/javascript"></script>
+	<script src="lib/turn.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="extras/modernizr.2.5.3.min.js"></script>
+
+	<title>Reece Jackson</title>
+</head>
+<body>
+	
+	<div class="landing-viewport">
+		<div id="main">
+			<div class="left-landing half">
+
+				<div class="buttonwrapper">
+					<div class="button col-md-4"><a href="resume.pdf"><img class="button" src="landing/resume.png"/></a></div>
+					<div class="button col-md-4"><a href="https://www.linkedin.com/in/reecejackson"><img class="button" src="landing/linkedin.png"/></div>
+					<div class="button col-md-4"><a href="mailto:reece@aloalabs.com"><img class="button" src="landing/email.png"/></a></div>
+				</div>
+
+				<style>
+					.button:hover { 
+
+					 }
+
+				</style>
+
+				<div id="selector" class="col-md-4"></div>
+
+				<style>
+					#selector {
+						position: absolute;
+						height: 2px;
+						width: 25%;
+						top: 70px;
+						left: -25%;
+						background-color: white;
+					}
+
+					.buttonwrapper {
+						height: 10em;
+					}
+
+				</style>
+
+				<div class="col-md-12 name"><img src="landing/reecejackson.png"/></div>
+				<div id="instruction" class="col-md-12 col-md-offset-1 instruction"><img src="landing/instruction.png"/></div>
+			</div>
+
+			<div class="right-landing half">
+				<div class="bottom"><img class="person" src="landing/person.png"/></div>
+			</div>	
+		</div>
+	</div>
+
+	<div class="notebook-bg flipbook-viewport">
+		<!-- <div class="index"><p>Back to Index</p></div> -->
+
+		<style> 
+			.index {
+				position: absolute;
+				top: 10px;
+				left: 5em;
+				height:auto;
+				width: 10%
+			}
+		</style> 
+
+		<div class="left">
+			<img id="phone" src="../v2/phone.png"/>
+		</div>
+
+		<div class="right">
+			<img id="pencil" src="../v2/pencil.png"/>
+		</div>
+
+		<div class="middle">
+
+			<div class="flipbook">
+				<div class="page">
+					<!-- <div class="bookmark"><img src="../v2/bmi.png"/></div> -->
+
+					<style> 
+						.bookmark {
+							position: absolute;
+							width: 75px;
+							height: 50px;
+							right: -15px;
+						}
+					</style>
+
+					<div class="labels col-md-9 col-md-offset-1"><img src="../v2/labels.png"/></div>
+					<div class="project p1 col-md-12" data-page="1"></div>
+					<div class="project p2 col-md-12" data-page="2"></div>
+					<div class="project p3 col-md-12" data-page="3"></div>
+					<div class="project p4 col-md-12" data-page="4"></div>
+					<div class="project p5 col-md-12" data-page="5"></div>
+					<!-- <div class="project p6 col-md-12" data-page="4"></div> -->
+				</div>
+
+				<div class="page">
+					<div class="logo col-md-3 col-md-offset-1"><img class="aloabot" src="aloabot/logo.png"></div>
+					<div class="partywolf col-md-6 aloabottitle"><img src="aloabot/title.png"></div>
+					<div class="pagenum"><img src="../v2/1.png"></div>
+					<div class="tagline2 col-md-8 col-md-offset-2"><img src="aloabot/tagline.png"></div>
+					<div class="description col-md-4 col-md-offset-2"><img id="aloabotdesc" src="aloabot/ex1.png"></div>
+					<div class="phonev2 col-md-5"><img class="phoneimg" id="aloabotphone" src="aloabot/phone1.png"></div>
+
+					<style>
+						.aloabot {
+							margin-top: 2em;
+							margin-left: 2em;
+						}
+
+						.aloabottitle {
+							margin-left: 3em;
+						}
+
+					</style>
+				</div>
+
+				<div class="page">
+					<div class="logo col-md-2 col-md-offset-2"><img src="caffeine/logo.png"></div>
+					<div class="partywolf title col-md-6"><img src="caffeine/title.png"></div>
+					<div class="pagenum"><img src="../v2/2.png"></div>
+					<div class="tagline2 col-md-8 col-md-offset-2"><img src="caffeine/tagline.png"></div>
+					<div class="description col-md-4 col-md-offset-2"><img id="caffeinedesc" src="caffeine/ex1.png"></div>
+					<div class="phonev2 col-md-5"><img class="phoneimg" id="caffeinephone" src="caffeine/phone1.png"></div>
+				</div>
+
+				<div class="page">
+					<div class="logo col-md-2 col-md-offset-2"><img src="clique/logo.png"></div>
+					<div class="title col-md-6"><img src="clique/title.png"></div>
+					<div class="pagenum"><img src="../v2/3.png"></div>
+					<div class="tagline col-md-8 col-md-offset-2"><img src="clique/tagline.png"></div>
+					<div class="description col-md-4 col-md-offset-2"><img id="cliquedesc" src="clique/ex1.png"></div>
+					<div class="phonev2 col-md-5"><img class="phoneimg" id="cliquephone" src="clique/phone1.png"></div>
+<!-- 					<div id="left" class="half"></div>
+					<div id="right" class="half"></div> --> 
+
+					<style>
+						.pagenum {
+							position: absolute;
+							right: 1em;
+							top: 2em;
+						}
+
+						.pagenum img {
+							width: 35%;
+						}
+					</style>
+				</div>
+
+				<div class="page">
+					<div class="logo col-md-2 col-md-offset-2"><img src="partywolf/logo.png"></div>
+					<div class="partywolf title col-md-6"><img src="partywolf/title.png"></div>
+					<div class="pagenum"><img src="../v2/4.png"></div>
+					<div class="tagline2 col-md-8 col-md-offset-2"><img src="partywolf/tagline.png"></div>
+					<div class="description col-md-4 col-md-offset-2"><img id="partywolfdesc" src="partywolf/ex1.png"></div>
+					<div class="phonev2 col-md-5"><img class="phoneimg" id="partywolfphone" src="partywolf/phone1.png"></div>
+				</div>
+
+				<div class="page">
+					<div class="lessonbuddylogo col-md-3 col-md-offset-2"><img src="lessonbuddy/logo.png"></div>
+					<div class="title col-md-4"><img src="lessonbuddy/title.png"></div>
+					<div class="pagenum"><img src="../v2/5.png"></div>
+					<div class="tagline col-md-8 col-md-offset-2"><img src="lessonbuddy/tagline.png"></div>
+					<div class="description col-md-4 col-md-offset-2"><img id="lessonbuddydesc" src="lessonbuddy/ex1.png"></div>
+					<div class="phonev2 col-md-5"><img class="phoneimg" id="lessonbuddyphone" src="lessonbuddy/phone1.png"></div>
+				</div>
+			</div>
+
+			<img id="binding" src="../v2/binding.png"/>
+		</div>
+
+	</div>
+
+	<style>
+		body {
+			-webkit-transform: translate3d(0, 0, 0);
+			-webkit-transform-style: preserve-3d;
+		}
+
+		.notebook-bg {
+			background-color: #FDD2AE;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 100%;
+			background-size: 100%;
+			padding-left: 12em;
+			overflow: hidden;
+			padding-left: 400px;
+		}
+
+		.flipbook {
+			width: 95%;
+		}
+
+		.tagline {
+			margin-top: 1em;
+		}
+
+		.description {
+			margin-top: 19em;
+		}
+
+		.description img {
+			animation-duration: 12s;
+		    animation-delay: 1.5s;
+		    animation-iteration-count: infinite;
+
+			-webkit-backface-visibility: hidden;
+			-webkit-transform: scale(1);
+
+			padding-right: 2.5em;
+		}
+
+		.labels {
+			width: 85%;
+			margin-top: 3.4em;
+			padding-left: 1em;
+		}
+
+		.phonev2 {
+			overflow: hidden;
+		}
+
+		.project {
+			/*border: 1px solid black;*/
+			height: 4em;
+			position: absolute;
+			z-index: 1000;
+		}
+
+		.tagline2 {
+			margin-top: 4em;
+		}
+
+		.p1 {
+			top: 11.5em;
+		}
+
+		.p2 {
+			top: 25em;
+		}
+
+		.p3 {
+			top: 38em;
+		}
+
+		.p4 {
+			top: 46.5em;
+		}
+
+		.p5 {
+			top: 55.5em;
+		}
+
+		.p6 {
+			top: 64em;
+		}
+
+		.partywolf {
+			margin-top: 10%;
+		}
+
+		.lessonbuddylogo {
+			padding: 3em;
+			margin-top: 5%;
+		}
+
+		.phoneimg {
+		    animation-duration: 12s;
+		    animation-delay: 1.5s;
+		    animation-iteration-count: infinite;
+
+			-webkit-backface-visibility: hidden;
+			-webkit-transform: scale(1);
+			padding-top: 4em;
+			padding-left: 1.5em;
+		}
+
+
+		#cliquephone {
+			animation-name: clique;
+		}
+
+		#cliquedesc {
+			animation-name: cliquedescription;
+		}
+
+		#lessonbuddyphone {
+			animation-name: lessonbuddy;
+		}
+
+		#lessonbuddydesc {
+			animation-name: lessonbuddydescription;
+		}
+
+		#partywolfphone {
+			animation-name: partywolf;
+		}
+
+		#partywolfdesc {
+			animation-name: partywolfdescription;
+		}
+
+		#caffeinephone {
+			animation-duration: 20s;
+			animation-name: caffeine;
+		}
+
+		#caffeinedesc {
+			animation-duration: 20s;
+			animation-name: caffeinedescription;
+		}
+
+		#aloabotphone {
+			animation-name: aloabot;
+		}
+
+		#aloabotdesc {
+			animation-name: aloabotdescription;
+		}
+
+		@keyframes clique {
+		    0%   {content:url('clique/phone1.png');}
+		    25%  {content:url('clique/phone3.png');}
+		    50%  {content:url('clique/phone2.png');}
+		    75% {content:url('clique/phone4.png');}
+		}
+
+		@keyframes cliquedescription {
+			0% {content:url('clique/ex1.png');}
+			25% {content:url('clique/ex2.png');}
+			50% {content:url('clique/ex3.png');}
+			75% {content:url('clique/ex4.png');}
+		}
+
+		@keyframes lessonbuddy {
+		    0%   {content:url('lessonbuddy/phone1.png');}
+		    33%  {content:url('lessonbuddy/phone2.png');}
+		    66%  {content:url('lessonbuddy/phone3.png');}
+		}
+
+		@keyframes lessonbuddydescription {
+			0% {content:url('lessonbuddy/ex1.png');}
+			33% {content:url('lessonbuddy/ex2.png');}
+			66% {content:url('lessonbuddy/ex3.png');}
+		}
+
+		@keyframes caffeine {
+			0%   {content:url('caffeine/phone1.png');}
+			14%   {content:url('caffeine/phone2.png');}
+			28%   {content:url('caffeine/phone3.png');}
+			42%   {content:url('caffeine/phone4.png');}
+			56%   {content:url('caffeine/phone5.png');}
+			70%   {content:url('caffeine/phone6.png');}
+			84%   {content:url('caffeine/phone7.png');}
+		}
+
+		@keyframes caffeinedescription {
+			0%   {content:url('caffeine/ex1.png');}
+			14%   {content:url('caffeine/ex2.png');}
+			28%   {content:url('caffeine/ex3.png');}
+			42%   {content:url('caffeine/ex4.png');}
+			56%   {content:url('caffeine/ex5.png');}
+			70%   {content:url('caffeine/ex6.png');}
+			84%   {content:url('caffeine/ex7.png');}
+		}
+
+
+		@keyframes partywolf {
+		    0%   {content:url('partywolf/phone1.png');}
+		    25%  {content:url('partywolf/phone2.png');}
+		    50%  {content:url('partywolf/phone3.png');}
+		    75%  {content:url('partywolf/phone4.png');}		    
+		}
+
+		@keyframes partywolfdescription {
+			0% {content:url('partywolf/ex1.png');}
+			25% {content:url('partywolf/ex3.png');}
+			50% {content:url('partywolf/ex2.png');}
+			75% {content:url('partywolf/ex4.png');}
+		}
+
+		@keyframes aloabot {
+			0%   {content:url('aloabot/phone1.png');}
+			66%   {content:url('aloabot/phone2.png');}	
+		}
+
+		@keyframes aloabotdescription {
+			0%   {content:url('aloabot/ex1.png');}
+			33%   {content:url('aloabot/ex2.png');}	
+			66%   {content:url('aloabot/ex3.png');}	
+		}
+
+		.left {
+			width: 20%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+
+		.middle {
+			width: 60%;
+			height: 100%;
+			position: absolute;
+			padding-left: 2.75em;
+			top: 0;
+			left: 20%;
+			right:20%; 
+		}
+
+		.right {
+			width: 20%;
+			height: 100%;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+
+		#phone {
+			position: absolute;
+			width: 25em;
+			top: 28%;
+			left:-9em;
+		}
+
+		#pencil {
+			position: absolute;
+			width: 14em;
+			top: 25%;
+			right:5em;
+		}
+
+		#binding {
+			position: absolute;
+			top:0;
+			left:0;
+			width: 5em;
+		}
+
+	</style>
+
+	<script type="text/javascript">
+
+		$(document).ready(function () {
+
+			function showProjecys() {
+				$('.noteboook-bg').animate({
+					'top': '0',
+				}, 2000);
+			}
+
+			$('#instruction').click(function() {
+				showProjecys()
+			});
+
+			function loadApp() {
+
+				$('.flipbook').turn({
+					display: 'single',
+					// autocenter: true
+				});
+			}
+
+			loadApp();
+
+			var currentPage = 0;
+
+			$('#instruction').click(function() {
+				// $('.notebook-bg').animate({
+				// 	'top': '0'
+				// }, 500);
+
+				// $('#left').css('top', '0');
+				// $('#right').css('top', '0');
+				$("html, body").animate({
+					scrollTop: $(".flipbook-viewport").offset().top
+				}, 750);
+			});
+
+			$('.project').click(function() {
+				console.log(currentPage);
+
+				var pages = $(this).data("page");
+				currentPage = pages;
+
+				(function turnPage (i) {          
+					setTimeout(function () {   
+						$('.flipbook').turn('next');
+						console.log("Should be doing something");             
+				      
+				      	if (--i) turnPage(i);
+				   }, 350)
+				})(pages); 
+			})
+
+			$('.index').click(function() {
+				(function turnPage (i) {          
+					setTimeout(function () {   
+						$('.flipbook').turn('previous');
+				      
+				      	if (--i) turnPage(i);
+				   }, 350)
+				})(currentPage); 
+			});
+
+			$('.right').click(function() {
+				$('.flipbook').turn('next');
+				currentPage++;
+				console.log(currentPage);
+			});
+
+			$('.left').click(function() {
+				$('.flipbook').turn('previous');
+				currentPage--;
+				console.log(currentPage);
+			});
+
+			var mousewheelevt = (/Firefox/i.test(navigator.userAgent)) ? "DOMMouseScroll" : "mousewheel" //FF doesn't recognize mousewheel as of FF3.x
+			$('body').bind(mousewheelevt, function(e){
+
+			    var evt = window.event || e //equalize event object     
+			    evt = evt.originalEvent ? evt.originalEvent : evt; //convert to originalEvent if possible               
+			    var delta = evt.detail ? evt.detail*(-40) : evt.wheelDelta //check for detail first, because it is used by Opera and FF
+
+			    var offset = $(window).scrollTop()
+
+			    if(delta > 0) {
+			        //scroll up
+			    }
+			    else{
+			        //scroll down
+			   //      if(offset == 1076 && currentPage != 4) {
+						// (function turnPage (i) {          
+						// 	setTimeout(function () {   
+						// 		$('.flipbook').turn('next');
+						      
+						//       	if (--i) turnPage(i);
+						//    }, 350)
+						// })(currentPage); 
+			   //      }
+			    }   
+			});
+
+			$('div.button').on('mouseenter', function() {
+				var left = $(this).offset().left + 30;
+				$('#selector').animate({
+					'left': left
+				}, 250);
+			});
+
+			$('div.buttonwrapper').on('mouseleave', function() {
+				$('#selector').animate({
+					'left': '-250px'
+				}, 250);
+			});
+		});
+
+	</script>
+
+
+</body>
+</HTML>
