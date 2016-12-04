@@ -105,6 +105,19 @@
 			<img id="pencil" src="resources/pencil.png"/>
 		</div>
 
+
+		<!--
+		
+		<middle>
+			<flipbook>
+			</flipbook>
+		</>
+
+
+
+
+		-->
+
 		<div class="middle">
 
 			<div class="flipbook">
@@ -214,18 +227,19 @@
 
 		.notebook-bg {
 			background-color: #FDD2AE;
+			background-attachment: fixed;
 			position: absolute;
 			width: 100%;
 			height: 100%;
 			top: 100%;
 			background-size: 100%;
 			padding-left: 12em;
-			overflow: hidden;
+			/*overflow-y:auto;*/
 			padding-left: 400px;
 		}
 
 		.flipbook {
-			width: 95%;
+			width: 1044px;
 		}
 
 		.tagline {
@@ -435,14 +449,24 @@
 			top: 0;
 		}
 
+		@media (max-width: 990px) {
+			.middle {
+				width: 100%;
+				padding-left: 5em;
+			}
+		}
+
 		.middle {
-			width: 60%;
 			height: 100%;
+			width: 1115px;
 			position: absolute;
 			padding-left: 2.75em;
-			top: 0;
-			left: 20%;
-			right:20%; 
+			top: 50%;
+			left: 50%;
+			right: 50%;
+			transform: translate(-50%, -50%);
+			/*overflow-y:auto;*/
+			overflow: hidden;
 		}
 
 		.right {
@@ -471,7 +495,7 @@
 			position: absolute;
 			top:0;
 			left:0;
-			width: 5em;
+			width: 5.25em;
 		}
 
 	</style>
