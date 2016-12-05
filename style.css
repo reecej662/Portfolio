@@ -299,6 +299,31 @@ html, body{
 	overflow: visible;
 }
 
+/*.person {
+	animation-name: personanim;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+}*/
+
+@keyframes personanim {
+	0% {content:url('person/person1.png');}
+	12% {content:url('person/person3.png');}
+	18% {content:url('person/person4.png');}
+	24% {content:url('person/person5.png');}
+	30% {content:url('person/person6.png');}
+	36% {content:url('person/person7.png');}
+	42% {content:url('person/person8.png');}
+	48% {content:url('person/person9.png');}
+	54% {content:url('person/person10.png')}
+	60% {content:url('person/person11.png');}
+	66% {content:url('person/person12.png');}
+	68% {content:url('person/person13.png');}
+	74% {content:url('person/person14.png');}
+	80% {content:url('person/person15.png');}
+	86% {content:url('person/person16.png');}
+	92% {content:url('person/person17.png');}
+}
+
 .bottom {
 	position: absolute;
 	bottom: 0;

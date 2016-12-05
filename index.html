@@ -135,8 +135,19 @@
 					right: -15px;
 					top:10px;
 
+					cursor: pointer;
+					cursor: hand;
+
 /*					transition: 0.6s;
 					transform-style: preserve-3d;*/
+				}
+
+				.bookmarkpage {
+					position: absolute;
+					width: 100px;
+					height: 50px;
+					right: -60px;
+					top:10px;
 				}
 
 				#b1 {
@@ -159,6 +170,26 @@
 					top: 335px;
 				}
 
+				#bp1 {
+					top:75px;
+				}
+
+				#bp2 {
+					top:140px;
+				}
+
+				#bp3 {
+					top:205px;
+				}
+
+				#bp4 {
+					top:270px;
+				}
+
+				#bp5 {
+					top: 335px;
+				}
+
 				.flipbook {
 					overflow-y: hidden;
 				}
@@ -167,13 +198,16 @@
 					overflow: hidden;
 				}
 
-
+				.bpage {
+					right:20;
+				}
 
 			</style>
 
 			<div class="flipbook">
 				<div class="page">
 
+					<div class="bookmarkpage"><img src="resources/markI.png"/></div>
 
 					<div class="labels col-md-9 col-md-offset-1"><img src="resources/labels.png"/></div>
 					<div class="project p1 col-md-12" data-page="1"></div>
@@ -185,6 +219,7 @@
 				</div>
 
 				<div class="page">
+					<div id="bp1" class="bookmarkpage"><img src="resources/mark1.png"/></div>
 
 					<div class="logo col-md-3 col-md-offset-1"><img class="aloabot" src="aloabot/logo.png"></div>
 					<div class="partywolf col-md-6 aloabottitle"><img src="aloabot/title.png"></div>
@@ -207,6 +242,8 @@
 				</div>
 
 				<div class="page">
+					<div id="bp2" class="bookmarkpage"><img src="resources/mark2.png"/></div>
+
 					<div class="logo col-md-2 col-md-offset-2"><img src="caffeine/logo.png"></div>
 					<div class="partywolf title col-md-6"><img src="caffeine/title.png"></div>
 					<div class="pagenum"><img src="resources/2.png"></div>
@@ -216,6 +253,7 @@
 				</div>
 
 				<div class="page">
+					<div id="bp3" class="bookmarkpage"><img src="resources/mark3.png"/></div>
 
 					<div class="logo col-md-2 col-md-offset-2"><img src="clique/logo.png"></div>
 					<div class="title col-md-6"><img src="clique/title.png"></div>
@@ -240,6 +278,7 @@
 				</div>
 
 				<div class="page">
+					<div id="bp4" class="bookmarkpage"><img src="resources/mark4.png"/></div>
 				
 					<div class="logo col-md-2 col-md-offset-2"><img src="partywolf/logo.png"></div>
 					<div class="partywolf title col-md-6"><img src="partywolf/title.png"></div>
@@ -250,6 +289,7 @@
 				</div>
 
 				<div class="page">
+					<div id="bp5" class="bookmarkpage"><img src="resources/mark5.png"/></div>
 
 					<div class="lessonbuddylogo col-md-3 col-md-offset-2"><img src="lessonbuddy/logo.png"></div>
 					<div class="title col-md-4"><img src="lessonbuddy/title.png"></div>
@@ -415,6 +455,16 @@
 			animation-name: aloabotdescription;
 		}
 
+		#phone {
+			animation-name: deskphone;
+			animation-duration: 10s;
+			animation-delay: 6s;
+		    animation-iteration-count: 3;
+
+			-webkit-backface-visibility: hidden;
+			-webkit-transform: scale(1);
+		}
+
 		@keyframes clique {
 		    0%   {content:url('clique/phone1.png');}
 		    25%  {content:url('clique/phone3.png');}
@@ -487,12 +537,19 @@
 			66%   {content:url('aloabot/ex3.png');}	
 		}
 
+		@keyframes deskphone {
+			0% {content:url('resources/phone.png');}
+			80% {content:url('resources/phone2.png');}
+		}
+
 		.left {
 			width: 20%;
 			height: 100%;
 			position: absolute;
 			left: 0;
 			top: 0;
+			cursor: pointer;
+			cursor: hand;
 		}
 
 		@media (max-width: 990px) {
@@ -519,6 +576,8 @@
 			position: absolute;
 			right: 0;
 			top: 0;
+			cursor: pointer;
+			cursor: hand;
 		}
 
 		#phone {
@@ -622,8 +681,8 @@
 					      
 					      	if (--i) turnPage(i);
 
-					      	$('#b' + currentPage).animate({right: "40px"}, 200);
-					      	$('#b' + currentPage).animate({right: "-15px"}, 200);
+					      	$('#b' + (currentPage - 1)).animate({right: "40px"}, 500);
+					      	$('#b' + (currentPage - 1)).animate({right: "-15px"}, 150);
 
 					      	// $('#b' + currentPage).style.transform="rotateY(180deg)"
 					      	currentPage--;
@@ -637,8 +696,8 @@
 
 					      	if (--i) turnPage(i);
 
-					      	$('#b' + currentPage).animate({right: "40px"}, 200);
-					      	$('#b' + currentPage).animate({right: "-15px"}, 200);
+					      	$('#b' + currentPage).animate({right: "40px"}, 50);
+					      	$('#b' + currentPage).animate({right: "-15px"}, 600);
 
 					      	currentPage++;
 						}, 400)
@@ -660,8 +719,8 @@
 			$('.right').click(function() {
 				if(currentPage < 5) {
 					$('.flipbook').turn('next');
-			      	$('#b' + currentPage).animate({right: "40px"}, 200);
-			      	$('#b' + currentPage).animate({right: "-15px"}, 200);
+			      	$('#b' + currentPage).animate({right: "40px"}, 50);
+			      	$('#b' + currentPage).animate({right: "-15px"}, 600);
 					currentPage++;
 					console.log(currentPage);
 				};
@@ -670,8 +729,9 @@
 			$('.left').click(function() {
 				if(currentPage > 0) {
 					$('.flipbook').turn('previous');
-			      	$('#b' + currentPage).animate({right: "40px"}, 200);
-			      	$('#b' + currentPage).animate({right: "-15px"}, 200);
+			      	$('#b' + (currentPage - 1)).animate({right: "60px"}, 500);
+			      	$('#b' + (currentPage - 1)).animate({right: "61px"}, 100);
+			      	$('#b' + (currentPage - 1)).animate({right: "-15px"}, 150);
 					currentPage--;
 					console.log(currentPage);
 				};
@@ -723,6 +783,12 @@
 			$('#phone').on('mouseleave', function() {
 				$(this).attr('src', 'resources/phone.png');
 			})
+
+			$('#phone').click(function() {
+				$("html, body").animate({
+					scrollTop: $(".landing-viewport").offset().top
+				}, 750);
+			});
 
 		});
 
