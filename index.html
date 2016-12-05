@@ -97,11 +97,11 @@
 			}
 		</style> 
 
-		<div class="left">
+		<div class="left noselect">
 			<img id="phone" src="resources/phone.png"/>
 		</div>
 
-		<div class="right">
+		<div class="right noselect">
 			<img id="pencil" src="resources/pencil.png"/>
 		</div>
 
@@ -118,20 +118,62 @@
 
 		-->
 
-		<div class="middle">
+		<div class="middle noselect">
+
+			<div id="b0" class="bookmark" data-page="0"><img src="resources/markI.png"/></div>
+			<div id="b1" class="bookmark" data-page="1"><img src="resources/mark1.png"/></div>
+			<div id="b2" class="bookmark" data-page="2"><img src="resources/mark2.png"/></div>
+			<div id="b3" class="bookmark" data-page="3"><img src="resources/mark3.png"/></div>
+			<div id="b4" class="bookmark" data-page="4"><img src="resources/mark4.png"/></div>
+			<div id="b5" class="bookmark" data-page="5"><img src="resources/mark5.png"/></div>
+
+			<style> 
+				.bookmark {
+					position: absolute;
+					width: 100px;
+					height: 50px;
+					right: -15px;
+					top:10px;
+
+/*					transition: 0.6s;
+					transform-style: preserve-3d;*/
+				}
+
+				#b1 {
+					top:75px;
+				}
+
+				#b2 {
+					top:140px;
+				}
+
+				#b3 {
+					top:205px;
+				}
+
+				#b4 {
+					top:270px;
+				}
+
+				#b5 {
+					top: 335px;
+				}
+
+				.flipbook {
+					overflow-y: hidden;
+				}
+
+				.overflow-hidden {
+					overflow: hidden;
+				}
+
+
+
+			</style>
 
 			<div class="flipbook">
 				<div class="page">
-					<!-- <div class="bookmark"><img src="../resources/bmi.png"/></div> -->
 
-					<style> 
-						.bookmark {
-							position: absolute;
-							width: 75px;
-							height: 50px;
-							right: -15px;
-						}
-					</style>
 
 					<div class="labels col-md-9 col-md-offset-1"><img src="resources/labels.png"/></div>
 					<div class="project p1 col-md-12" data-page="1"></div>
@@ -143,6 +185,7 @@
 				</div>
 
 				<div class="page">
+
 					<div class="logo col-md-3 col-md-offset-1"><img class="aloabot" src="aloabot/logo.png"></div>
 					<div class="partywolf col-md-6 aloabottitle"><img src="aloabot/title.png"></div>
 					<div class="pagenum"><img src="resources/1.png"></div>
@@ -173,6 +216,7 @@
 				</div>
 
 				<div class="page">
+
 					<div class="logo col-md-2 col-md-offset-2"><img src="clique/logo.png"></div>
 					<div class="title col-md-6"><img src="clique/title.png"></div>
 					<div class="pagenum"><img src="resources/3.png"></div>
@@ -196,6 +240,7 @@
 				</div>
 
 				<div class="page">
+				
 					<div class="logo col-md-2 col-md-offset-2"><img src="partywolf/logo.png"></div>
 					<div class="partywolf title col-md-6"><img src="partywolf/title.png"></div>
 					<div class="pagenum"><img src="resources/4.png"></div>
@@ -205,6 +250,7 @@
 				</div>
 
 				<div class="page">
+
 					<div class="lessonbuddylogo col-md-3 col-md-offset-2"><img src="lessonbuddy/logo.png"></div>
 					<div class="title col-md-4"><img src="lessonbuddy/title.png"></div>
 					<div class="pagenum"><img src="resources/5.png"></div>
@@ -214,7 +260,7 @@
 				</div>
 			</div>
 
-			<img id="binding" src="resources/binding.png"/>
+			<div class="overflow-hidden"><img id="binding" src="resources/binding.png"/>
 		</div>
 
 	</div>
@@ -322,7 +368,7 @@
 
 			-webkit-backface-visibility: hidden;
 			-webkit-transform: scale(1);
-			padding-top: 4em;
+			padding-top: 2em;
 			padding-left: 1.5em;
 		}
 
@@ -465,8 +511,6 @@
 			left: 50%;
 			right: 50%;
 			transform: translate(-50%, -50%);
-			/*overflow-y:auto;*/
-			overflow: hidden;
 		}
 
 		.right {
@@ -481,7 +525,7 @@
 			position: absolute;
 			width: 25em;
 			top: 28%;
-			left:-9em;
+			left:-4.5em;
 		}
 
 		#pencil {
@@ -496,6 +540,17 @@
 			top:0;
 			left:0;
 			width: 5.25em;
+			height: 100%;
+		}
+
+		.noselect {
+			-webkit-user-select: none; /* Chrome/Safari */        
+			-moz-user-select: none; /* Firefox */
+			-ms-user-select: none; /* IE10+ */
+
+			/* Rules below not implemented in browsers yet */
+			-o-user-select: none;
+			user-select: none;
 		}
 
 	</style>
@@ -554,26 +609,72 @@
 				})(pages); 
 			})
 
+			$('.bookmark').click(function() {
+				var page = $(this).data("page");
+				numToTurn = page - currentPage;
+
+				if(numToTurn < 0) {
+					numToTurn = Math.abs(numToTurn);
+
+					(function turnPage(i) {
+						setTimeout(function () {
+							$('.flipbook').turn('previous');          
+					      
+					      	if (--i) turnPage(i);
+
+					      	$('#b' + currentPage).animate({right: "40px"}, 200);
+					      	$('#b' + currentPage).animate({right: "-15px"}, 200);
+
+					      	// $('#b' + currentPage).style.transform="rotateY(180deg)"
+					      	currentPage--;
+
+						}, 400)
+					})(numToTurn);
+				} else if(numToTurn > 0) {
+					(function turnPage(i) {
+						setTimeout(function () {
+							$('.flipbook').turn('next');          
+
+					      	if (--i) turnPage(i);
+
+					      	$('#b' + currentPage).animate({right: "40px"}, 200);
+					      	$('#b' + currentPage).animate({right: "-15px"}, 200);
+
+					      	currentPage++;
+						}, 400)
+					})(numToTurn);
+				}
+			});
+
 			$('.index').click(function() {
 				(function turnPage (i) {          
 					setTimeout(function () {   
 						$('.flipbook').turn('previous');
-				      
+
 				      	if (--i) turnPage(i);
+
 				   }, 350)
 				})(currentPage); 
 			});
 
 			$('.right').click(function() {
-				$('.flipbook').turn('next');
-				currentPage++;
-				console.log(currentPage);
+				if(currentPage < 5) {
+					$('.flipbook').turn('next');
+			      	$('#b' + currentPage).animate({right: "40px"}, 200);
+			      	$('#b' + currentPage).animate({right: "-15px"}, 200);
+					currentPage++;
+					console.log(currentPage);
+				};
 			});
 
 			$('.left').click(function() {
-				$('.flipbook').turn('previous');
-				currentPage--;
-				console.log(currentPage);
+				if(currentPage > 0) {
+					$('.flipbook').turn('previous');
+			      	$('#b' + currentPage).animate({right: "40px"}, 200);
+			      	$('#b' + currentPage).animate({right: "-15px"}, 200);
+					currentPage--;
+					console.log(currentPage);
+				};
 			});
 
 			var mousewheelevt = (/Firefox/i.test(navigator.userAgent)) ? "DOMMouseScroll" : "mousewheel" //FF doesn't recognize mousewheel as of FF3.x
@@ -614,6 +715,15 @@
 					'left': '-250px'
 				}, 250);
 			});
+
+			$('#phone').on('mouseenter', function() {
+				$(this).attr('src', 'resources/phone2.png');
+			});
+
+			$('#phone').on('mouseleave', function() {
+				$(this).attr('src', 'resources/phone.png');
+			})
+
 		});
 
 	</script>
