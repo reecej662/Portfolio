@@ -2,6 +2,251 @@ html, body{
 	height:100%;
 }
 
+.body-viewport {
+	width: 100%;
+	height: 200%;
+	overflow: auto;
+	white-space: nowrap;
+	scroll-snap-points-y: repeat(100%);
+	scroll-snap-type: mandatory;
+	scroll-snap-destination: 100% 0%;
+	-webkit-scroll-snap-points-y: repeat(100%);
+	-webkit-scroll-snap-type: mandatory;
+	-webkit-scroll-snap-destination: 0%;
+}
+
+.half {
+	position: fixed;
+	top: 0;
+}
+
+#left {
+	left: 0;
+	top: 100%;
+	width: 50%;
+	height: 100%;
+}
+
+#right {
+	right: 0;
+	top: 100%;
+	width: 50%;
+	height: 100%;
+}
+
+.left-landing {
+	left: 0;
+	padding-left: 1em;
+	width: 50%;
+	height: 100%;
+}
+
+.right-landing {
+	right: 0;
+	height: 100%;
+}
+
+.person {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+.landing-viewport {
+	background-color: #48CCFB;
+	height: 100%;
+}
+
+
+.flipbook-viewport {
+	position: absolute;
+	top: 225%;
+}
+
+.content-viewport {
+	position: absolute;
+	top: 100%;
+	height: 100%;
+	width: 100%;
+}
+
+.button {
+	color: orange;
+}
+
+.button img {
+	display: block;
+	width: auto;
+	height: 30px;
+	margin-top: 1.5em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.name {
+	position: absolute;
+	top:45%;
+}
+
+.instruction {
+	position: absolute;
+	bottom: 1em;
+	z-index: 300;
+	padding-left: 4em;
+	padding-right: 4em;
+}
+
+.instruction img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.page {
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(255, 255, 255, 0);
+	background-image: url("resources/pagebg.png");
+	background-image: "";
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+.flipbook {
+	height: 100%;
+	width: 85em;
+	padding-left: -5em;
+	overflow: visible;
+}
+
+/*
+.person {
+	animation-name: personanim;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+}*/
+
+#selector {
+	position: absolute;
+	height: 2px;
+	width: 25%;
+	top: 70px;
+	left: -25%;
+	background-color: white;
+}
+
+.buttonwrapper {
+	height: 10em;
+}
+
+@keyframes personanim {
+	0% {content:url('person/person1.png');}
+	12% {content:url('person/person3.png');}
+	18% {content:url('person/person4.png');}
+	24% {content:url('person/person5.png');}
+	30% {content:url('person/person6.png');}
+	36% {content:url('person/person7.png');}
+	42% {content:url('person/person8.png');}
+	48% {content:url('person/person9.png');}
+	54% {content:url('person/person10.png')}
+	60% {content:url('person/person11.png');}
+	66% {content:url('person/person12.png');}
+	68% {content:url('person/person13.png');}
+	74% {content:url('person/person14.png');}
+	80% {content:url('person/person15.png');}
+	86% {content:url('person/person16.png');}
+	92% {content:url('person/person17.png');}
+}
+
+.bottom {
+	position: absolute;
+	bottom: 0;
+	width:100%;
+	height: auto;
+	left: initial;
+	right: 0;
+}
+
+/******* Project Page *******/
+
+/* Styling for middle & notebook part */ 
+
+.bookmark {
+	position: absolute;
+	width: 100px;
+	height: 50px;
+	right: -15px;
+	top:10px;
+
+	cursor: pointer;
+	cursor: hand;
+}
+
+.bookmarkpage {
+	position: absolute;
+	width: 100px;
+	height: 50px;
+	right: -60px;
+	top:10px;
+}
+
+#b1 {
+	top:75px;
+}
+
+#b2 {
+	top:140px;
+}
+
+#b3 {
+	top:205px;
+}
+
+#b4 {
+	top:270px;
+}
+
+#b5 {
+	top: 335px;
+}
+
+#bp1 {
+	top:75px;
+}
+
+#bp2 {
+	top:140px;
+}
+
+#bp3 {
+	top:205px;
+}
+
+#bp4 {
+	top:270px;
+}
+
+#bp5 {
+	top: 335px;
+}
+
+.flipbook {
+	overflow-y: hidden;
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}
+
+.bpage {
+	right:20;
+}
+
+/******* Media Queries *******/
+
+/* <900px */
+
 @media (max-width: 990px) {
 	img {
 		width: 100%;
@@ -59,14 +304,12 @@ html, body{
 	}
 
 	.instruction {
-		position: relative;
-		/*bottom: -10em;*/
+		/*position: relative;*/
 		width: 50%;
-/*		padding-left: 2em;
-		padding-right: 2em;*/
 		padding: 0em;
 		padding-right: 3em;
 	}
+
 	/* CSS for the phones */
 	.phone {
 		z-index: 100;
@@ -86,15 +329,15 @@ html, body{
 	}
 
 	.left-landing {
-		width: 100%;
+		width: 100% !important;
 	}
 
 	.name {
-		top: 25%;
+		top: 25% !important;
 	}
 }
 
-/* Large Desktops */
+/* >900px Large Desktops */
 
 @media (min-width: 990px) {
 
@@ -131,17 +374,13 @@ html, body{
 		margin-bottom: 2%;
 	}
 
-	.name {
-		top: 45%;
-	}
-
 	.logo {
 		margin-top: 5%;
 	}
 
 	.instruction {
 		position: absolute;
-		bottom: 10%;
+		/*bottom: 10%;*/
 		width: 80%;
 		/*left:4%;		*/
 	}
@@ -174,27 +413,7 @@ html, body{
 
 }
 
-@media (min-width: 1500px) {
-	.person {
-		width: 725px;
-	}
-
-	.right-landing {
-		width: 725px;
-	}
-
-	.left-landing {
-		width: 50%;
-	}
-
-	.name {
-		top: 45%;
-	}
-}
-
-@media (min-width: 1750px) {
-	/*Notebook width is good at this point*/
-}
+/* Between 990px and 1500px*/
 
 @media (min-width: 990px) and (max-width: 1500px) {
 	.person {
@@ -204,154 +423,358 @@ html, body{
 	.right-landing {
 		width: 60%;
 	}
+}
 
-	.left-landing {
-		width: 50%;
+/* >1500px */
+
+@media (min-width: 1500px) {
+	.person {
+		width: 725px;
 	}
 
-	.name {
-		top: 45%;
+	.right-landing {
+		width: 725px;
 	}
 }
 
-.half {
-	position: fixed;
-	top: 0;
+/* >1750px */
+
+@media (min-width: 1750px) {
+	/*Notebook width is good at this point*/
 }
 
-#left {
-	left: 0;
-	top: 100%;
-	width: 50%;
-	height: 100%;
+
+
+
+
+
+
+
+/**** Stuff mostly for flipbook, possible put into other file*/
+
+body {
+	-webkit-transform: translate3d(0, 0, 0);
+	-webkit-transform-style: preserve-3d;
 }
 
-#right {
-	right: 0;
-	top: 100%;
-	width: 50%;
-	height: 100%;
-}
-
-.left-landing {
-	left: 0;
-	padding-left: 1em;
-	/*width: 50%;*/
-	height: 100%;
-}
-
-.right-landing {
-	right: 0;
-	height: 100%;
-}
-
-.person {
+.notebook-bg {
+	background-color: #FDD2AE;
+	background-attachment: fixed;
 	position: absolute;
-	right: 0;
-	bottom: 0;
-}
-
-.flipbook-viewport {
-	position: absolute;
-	top: 225%;
-}
-
-.landing-viewport {
-	background-color: #48CCFB;
-	height: 100%;
-}
-
-.content-viewport {
-	position: absolute;
-	top: 100%;
-	height: 100%;
-	width: 100%;
-}
-
-.button {
-	color: orange;
-}
-
-.button img {
-	display: block;
-	width: auto;
-	height: 30px;
-	margin-top: 1.5em;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.name {
-	position: absolute;
-	/*top:45%;*/
-}
-
-.instruction {
-	position: absolute;
-	bottom: 1em;
-	z-index: 300;
-}
-
-.instruction img {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.page {
 	width: 100%;
 	height: 100%;
-	overflow: auto;
-	background-color: rgba(255, 255, 255, 0);
-	background-image: url("resources/pagebg.png");
-	background-image: "";
+	top: 100%;
 	background-size: 100%;
-	background-repeat: no-repeat;
-}
-
-#test {
-	width: 100%;
-	height: 100%;
-	background-color: #5555ff
+	padding-left: 12em;
+	/*overflow-y:auto;*/
+	padding-left: 400px;
 }
 
 .flipbook {
-	height: 100%;
-	width: 85em;
-	padding-left: -5em;
-	overflow: visible;
+	width: 1044px;
 }
 
-/*.person {
-	animation-name: personanim;
-	animation-duration: 1.5s;
-	animation-iteration-count: infinite;
-}*/
-
-@keyframes personanim {
-	0% {content:url('person/person1.png');}
-	12% {content:url('person/person3.png');}
-	18% {content:url('person/person4.png');}
-	24% {content:url('person/person5.png');}
-	30% {content:url('person/person6.png');}
-	36% {content:url('person/person7.png');}
-	42% {content:url('person/person8.png');}
-	48% {content:url('person/person9.png');}
-	54% {content:url('person/person10.png')}
-	60% {content:url('person/person11.png');}
-	66% {content:url('person/person12.png');}
-	68% {content:url('person/person13.png');}
-	74% {content:url('person/person14.png');}
-	80% {content:url('person/person15.png');}
-	86% {content:url('person/person16.png');}
-	92% {content:url('person/person17.png');}
+.tagline {
+	margin-top: 1em;
 }
 
-.bottom {
+.description {
+	margin-top: 19em;
+}
+
+.description img {
+	animation-duration: 12s;
+    animation-delay: 1.5s;
+    animation-iteration-count: infinite;
+
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: scale(1);
+
+	padding-right: 2.5em;
+}
+
+.labels {
+	width: 85%;
+	margin-top: 3.4em;
+	padding-left: 1em;
+}
+
+.phonev2 {
+	overflow: hidden;
+}
+
+.project {
+	/*border: 1px solid black;*/
+	height: 4em;
 	position: absolute;
-	bottom: 0;
-	width:100%;
-	height: auto;
-	left: initial;
-	right: 0;
+	z-index: 1000;
 }
+
+.tagline2 {
+	margin-top: 4em;
+}
+
+.pagenum {
+	position: absolute;
+	right: 1em;
+	top: 2em;
+}
+
+.pagenum img {
+	width: 35%;
+}
+
+.p1 {
+	top: 11.5em;
+}
+
+.p2 {
+	top: 25em;
+}
+
+.p3 {
+	top: 38em;
+}
+
+.p4 {
+	top: 46.5em;
+}
+
+.p5 {
+	top: 55.5em;
+}
+
+.p6 {
+	top: 64em;
+}
+
+.partywolf {
+	margin-top: 10%;
+}
+
+.lessonbuddylogo {
+	padding: 3em;
+	margin-top: 5%;
+}
+
+		.aloabot {
+	margin-top: 2em;
+	margin-left: 2em;
+}
+
+.aloabottitle {
+	margin-left: 3em;
+}
+
+.phoneimg {
+    animation-duration: 12s;
+    animation-delay: 1.5s;
+    animation-iteration-count: infinite;
+
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: scale(1);
+	padding-top: 2em;
+	padding-left: 1.5em;
+}
+
+#cliquephone {
+	animation-name: clique;
+}
+
+#cliquedesc {
+	animation-name: cliquedescription;
+}
+
+#lessonbuddyphone {
+	animation-name: lessonbuddy;
+}
+
+#lessonbuddydesc {
+	animation-name: lessonbuddydescription;
+}
+
+#partywolfphone {
+	animation-name: partywolf;
+}
+
+#partywolfdesc {
+	animation-name: partywolfdescription;
+}
+
+#caffeinephone {
+	animation-duration: 20s;
+	animation-name: caffeine;
+}
+
+#caffeinedesc {
+	animation-duration: 20s;
+	animation-name: caffeinedescription;
+}
+
+#aloabotphone {
+	animation-name: aloabot;
+}
+
+#aloabotdesc {
+	animation-name: aloabotdescription;
+}
+
+#phone {
+	animation-name: deskphone;
+	animation-duration: 10s;
+	animation-delay: 6s;
+    animation-iteration-count: 3;
+
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: scale(1);
+}
+
+/* Animation keyframes */ 
+
+@keyframes clique {
+    0%   {content:url('clique/phone1.png');}
+    25%  {content:url('clique/phone3.png');}
+    50%  {content:url('clique/phone2.png');}
+    75% {content:url('clique/phone4.png');}
+}
+
+@keyframes cliquedescription {
+	0% {content:url('clique/ex1.png');}
+	25% {content:url('clique/ex2.png');}
+	50% {content:url('clique/ex3.png');}
+	75% {content:url('clique/ex4.png');}
+}
+
+@keyframes lessonbuddy {
+    0%   {content:url('lessonbuddy/phone1.png');}
+    33%  {content:url('lessonbuddy/phone2.png');}
+    66%  {content:url('lessonbuddy/phone3.png');}
+}
+
+@keyframes lessonbuddydescription {
+	0% {content:url('lessonbuddy/ex1.png');}
+	33% {content:url('lessonbuddy/ex2.png');}
+	66% {content:url('lessonbuddy/ex3.png');}
+}
+
+@keyframes caffeine {
+	0%   {content:url('caffeine/phone1.png');}
+	14%   {content:url('caffeine/phone2.png');}
+	28%   {content:url('caffeine/phone3.png');}
+	42%   {content:url('caffeine/phone4.png');}
+	56%   {content:url('caffeine/phone5.png');}
+	70%   {content:url('caffeine/phone6.png');}
+	84%   {content:url('caffeine/phone7.png');}
+}
+
+@keyframes caffeinedescription {
+	0%   {content:url('caffeine/ex1.png');}
+	14%   {content:url('caffeine/ex2.png');}
+	28%   {content:url('caffeine/ex3.png');}
+	42%   {content:url('caffeine/ex4.png');}
+	56%   {content:url('caffeine/ex5.png');}
+	70%   {content:url('caffeine/ex6.png');}
+	84%   {content:url('caffeine/ex7.png');}
+}
+
+
+@keyframes partywolf {
+    0%   {content:url('partywolf/phone1.png');}
+    25%  {content:url('partywolf/phone2.png');}
+    50%  {content:url('partywolf/phone3.png');}
+    75%  {content:url('partywolf/phone4.png');}		    
+}
+
+@keyframes partywolfdescription {
+	0% {content:url('partywolf/ex1.png');}
+	25% {content:url('partywolf/ex3.png');}
+	50% {content:url('partywolf/ex2.png');}
+	75% {content:url('partywolf/ex4.png');}
+}
+
+@keyframes aloabot {
+	0%   {content:url('aloabot/phone1.png');}
+	66%   {content:url('aloabot/phone2.png');}	
+}
+
+@keyframes aloabotdescription {
+	0%   {content:url('aloabot/ex1.png');}
+	33%   {content:url('aloabot/ex2.png');}	
+	66%   {content:url('aloabot/ex3.png');}	
+}
+
+@keyframes deskphone {
+	0% {content:url('resources/phone.png');}
+	80% {content:url('resources/phone2.png');}
+}
+
+.left {
+	width: 20%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	cursor: pointer;
+	cursor: hand;
+}
+
+@media (max-width: 990px) {
+	.middle {
+		width: 100%;
+		padding-left: 5em;
+	}
+}
+
+.middle {
+	height: 100%;
+	width: 1115px;
+	position: absolute;
+	padding-left: 2.75em;
+	top: 50%;
+	left: 50%;
+	right: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.right {
+	width: 20%;
+	height: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	cursor: pointer;
+	cursor: hand;
+}
+
+#phone {
+	position: absolute;
+	width: 25em;
+	top: 28%;
+	left:-4.5em;
+}
+
+#pencil {
+	position: absolute;
+	width: 14em;
+	top: 25%;
+	right:5em;
+}
+
+#binding {
+	position: absolute;
+	top:0;
+	left:0;
+	width: 5.25em;
+	height: 100%;
+}
+
+.noselect {
+	-webkit-user-select: none; /* Chrome/Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+
+	/* Rules below not implemented in browsers yet */
+	-o-user-select: none;
+	user-select: none;
+}
+
