@@ -44,9 +44,9 @@
 			<div class="left-landing half">
 
 				<div class="buttonwrapper">
-					<div class="button col-md-4"><a href="resume.pdf"><img class="button" src="landing/resume.png"/></a></div>
-					<div class="button col-md-4"><a href="https://www.linkedin.com/in/reecejackson"><img class="button" src="landing/linkedin.png"/></div>
-					<div class="button col-md-4"><a href="mailto:reece@aloalabs.com"><img class="button" src="landing/email.png"/></a></div>
+					<div class="button col-sm-4"><a href="resume.pdf"><img class="button" src="landing/resume.png"/></a></div>
+					<div class="button col-sm-4"><a href="https://www.linkedin.com/in/reecejackson"><img class="button" src="landing/linkedin.png"/></div>
+					<div class="button col-sm-4"><a href="mailto:reece@aloalabs.com"><img class="button" src="landing/email.png"/></a></div>
 				</div>
 
 				<style>
@@ -720,6 +720,7 @@
 				if(currentPage < 5) {
 					$('.flipbook').turn('next');
 			      	$('#b' + currentPage).animate({right: "40px"}, 50);
+			      	$('#b' + currentPage).animate({right: "40px"}, 50);
 			      	$('#b' + currentPage).animate({right: "-15px"}, 600);
 					currentPage++;
 					console.log(currentPage);
@@ -729,8 +730,8 @@
 			$('.left').click(function() {
 				if(currentPage > 0) {
 					$('.flipbook').turn('previous');
-			      	$('#b' + (currentPage - 1)).animate({right: "60px"}, 500);
-			      	$('#b' + (currentPage - 1)).animate({right: "61px"}, 100);
+			      	$('#b' + (currentPage - 1)).animate({right: "60px"}, 400);
+			      	$('#b' + (currentPage - 1)).animate({right: "61px"}, 0);
 			      	$('#b' + (currentPage - 1)).animate({right: "-15px"}, 150);
 					currentPage--;
 					console.log(currentPage);
