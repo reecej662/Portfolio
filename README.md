@@ -1,9 +1,4 @@
 # My Portfolio Website
 
-A portfolio website designed and developed by me
+A portfolio website I designed and developed/n
 Check it out at reecejackson.co
-
-TODO: 
-Improve mobile layout
-Finish animations
-Organize code
